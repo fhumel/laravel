@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 //});
 
 Route::get("hola", "HomeController@hola");
-
+Route::post('signup', 'AuthController@signup'); // Signup
 
 
 Route::group([

@@ -39,8 +39,8 @@ class AuthController2 extends Controller
     public function signup(SignUpRequest $request)
     {
         $user = User::create($request->all());
-        $user->save();
-        return $this->login($request);
+
+        return $user->save();
     }
 
     /**

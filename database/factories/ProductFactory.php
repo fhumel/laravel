@@ -5,7 +5,7 @@
 use App\Product;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
-
+use App\User; // Assuming this is your User Model class with namespace.
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -19,6 +19,7 @@ use Faker\Generator as Faker;
 $factory->define(Product::class, function (Faker $faker) {
 
     return [
+        'user_id' => User::all()->random()->id,
         'name' => $faker->word,
         'price' => $faker->randomFloat(2,1,100),
         'description' => $faker->paragraph(random_int(1,10)),
